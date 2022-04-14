@@ -45,11 +45,9 @@ public class StudentAdapter extends ArrayAdapter<Student> {
         Student student = studentList.get(position);
         tv_name.setText(student.getName());
         tv_address.setText(student.getAddress());
-        tv_classroom.setText(student.getClassRoom() + "");
+        tv_classroom.setText(student.getGender() + "");
         tv_dateofbirth.setText(student.getDateOfBirth());
-        if (!student.getAvatar().equals("")) {
-            Glide.with(getContext()).load(student.getAvatar()).into(img_avatar);
-        }
         return convertView;
     }
+
 }

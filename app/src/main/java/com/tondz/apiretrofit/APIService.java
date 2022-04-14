@@ -14,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -26,20 +27,24 @@ public interface APIService {
             .connectTimeout(60, TimeUnit.SECONDS)
             .build();
 
-    @GET("getliststudent")
+    @GET("students")
     Call<List<Student>> getStudentList();
-    @GET("getstudentbyid")
-    Call<Student> getStudentById(@Query("id") int id);
-    @POST("add")
-    Call<Integer> addStudent(@Body Student student);
-    @PUT("update")
-    Call<Integer> updateStudetn(@Body Student student);
-    @DELETE("delete")
-    Call<Integer> deleteStudent(@Query("id") int id);
+    @GET("students/{studentID}")
+    Call<Student> getStudentById(@Path("studentID") String studentID);
+    @POST("students")
+    Call<String> addStudent(@Body Student student);
+    @PATCH("students/{studentID}")
+    Call<String> updateStudent(@Path("studentID") String id,@Body Student student);
+    @DELETE("students/{studentID}")
+    Call<String> deleteStudent(@Path("studentID") String id);
+
+
+
+
     @GET("Quang040422")
     Call<String>getQuang();
     Gson gson = new GsonBuilder().setLenient().setDateFormat("dd/MM/yyyy").create();
-    APIService apiService = new Retrofit.Builder().baseUrl("https://baith-taikhoan.conveyor.cloud/")
+    APIService apiService = new Retrofit.Builder().baseUrl("https://nodeshop123.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(APIService.class);

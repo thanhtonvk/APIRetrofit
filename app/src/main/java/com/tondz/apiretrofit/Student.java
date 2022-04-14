@@ -1,33 +1,25 @@
 package com.tondz.apiretrofit;
 
-public class Student {
-    private int ID;
-    private String Name;
-    private String DateOfBirth;
-    private int ClassRoom;
-    private String Address;
-    private String Avatar;
+import com.google.gson.annotations.SerializedName;
 
-    public Student(int ID, String name, String dateOfBirth, int classRoom, String address, String avatar) {
-        this.ID = ID;
-        Name = name;
-        DateOfBirth = dateOfBirth;
-        ClassRoom = classRoom;
-        Address = address;
-        Avatar = avatar;
-    }
-    public Student( String name, String dateOfBirth, int classRoom, String address, String avatar) {
-        Name = name;
-        DateOfBirth = dateOfBirth;
-        ClassRoom = classRoom;
-        Address = address;
-        Avatar = avatar;
-    }
-    public int getID() {
+public class Student {
+    @SerializedName("_id")
+    private String ID;
+    @SerializedName("name")
+    private String Name;
+    @SerializedName("dateofbirth")
+    private String DateOfBirth;
+    @SerializedName("gender")
+    private String Gender;
+    @SerializedName("address")
+    private String Address;
+
+
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -47,12 +39,12 @@ public class Student {
         DateOfBirth = dateOfBirth;
     }
 
-    public int getClassRoom() {
-        return ClassRoom;
+    public String getGender() {
+        return Gender;
     }
 
-    public void setClassRoom(int classRoom) {
-        ClassRoom = classRoom;
+    public void setGender(String gender) {
+        Gender = gender;
     }
 
     public String getAddress() {
@@ -63,11 +55,18 @@ public class Student {
         Address = address;
     }
 
-    public String getAvatar() {
-        return Avatar;
+    public Student(String ID, String name, String dateOfBirth, String gender, String address) {
+        this.ID = ID;
+        Name = name;
+        DateOfBirth = dateOfBirth;
+        Gender = gender;
+        Address = address;
     }
 
-    public void setAvatar(String avatar) {
-        Avatar = avatar;
+    public Student(String name, String dateOfBirth, String gender, String address) {
+        Name = name;
+        DateOfBirth = dateOfBirth;
+        Gender = gender;
+        Address = address;
     }
 }

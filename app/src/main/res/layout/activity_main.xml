@@ -7,6 +7,11 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <AutoCompleteTextView
+        android:id="@+id/edt_search"
+        android:hint="Tìm kiếm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
     <ListView
         android:id="@+id/lv_student"
         android:layout_width="match_parent"
@@ -17,44 +22,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Họ tên" />
+
     <EditText
-        android:visibility="gone"
-        android:inputType="date"
         android:id="@+id/edt_dateofbirth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ngày sinh" />
+        android:hint="Ngày sinh"
+        android:inputType="date" />
+
     <EditText
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Lớp"
         android:id="@+id/edt_classroom"
-        android:inputType="number"/>
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Giới tính"
+        />
+
+    <EditText
         android:id="@+id/edt_address"
-        android:hint="Địa chỉ"/>
-    <EditText
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Địa chỉ" />
+
+    <EditText
+
         android:id="@+id/edt_avatar"
-        android:hint="Link avatar"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Link avatar"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thêm"/>
+        android:text="Thêm" />
+
     <Button
         android:id="@+id/btn_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cập nhật"/>
+        android:text="Cập nhật" />
+
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xóa"/>
+        android:text="Xóa" />
 </LinearLayout>

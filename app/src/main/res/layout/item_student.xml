@@ -29,6 +29,8 @@
         android:layout_weight="1" />
 
     <ImageView
+        android:visibility="gone"
+        android:src="@drawable/ic_launcher_background"
         android:id="@+id/img_view"
         android:layout_width="match_parent"
         android:layout_height="100dp"
